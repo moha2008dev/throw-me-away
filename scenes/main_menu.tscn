@@ -64,11 +64,6 @@ position = Vector2( 148.269, 50.9999 )
 scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 3 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -0.676874 )
-anchor_mode = 0
-current = true
-
 [connection signal="pressed" from="new" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
