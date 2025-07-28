@@ -1,6 +1,6 @@
 extends Control
 
-var scene_go_to = preload("res://scenes/test_scene.tscn")
+var scene_go_to = preload("res://scenes/World.tscn")
 
 
 

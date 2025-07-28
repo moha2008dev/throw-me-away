@@ -65,7 +65,6 @@ scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2( 1, 1 )
 anchor_mode = 0
 
 [connection signal="pressed" from="new" to="." method="_on_new_pressed"]
