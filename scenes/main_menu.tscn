@@ -21,51 +21,53 @@ anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="new" type="TextureButton" parent="."]
-margin_left = 208.458
-margin_top = 40.4801
-margin_right = 236.458
-margin_bottom = 56.4801
+margin_left = 134.338
+margin_top = 32.5746
+margin_right = 162.338
+margin_bottom = 48.5746
 
 [node name="load" type="TextureButton" parent="."]
-margin_left = 208.408
-margin_top = 64.0949
-margin_right = 236.408
-margin_bottom = 80.095
+margin_left = 134.338
+margin_top = 43.7799
+margin_right = 162.338
+margin_bottom = 59.78
 
 [node name="settings" type="TextureButton" parent="."]
-margin_left = 208.408
-margin_top = 87.5599
-margin_right = 236.408
-margin_bottom = 103.56
+margin_left = 134.586
+margin_top = 54.6101
+margin_right = 162.586
+margin_bottom = 70.6102
 
 [node name="exit" type="TextureButton" parent="."]
-margin_left = 208.408
-margin_top = 111.025
-margin_right = 236.408
-margin_bottom = 127.025
+margin_left = 134.835
+margin_top = 65.8914
+margin_right = 162.835
+margin_bottom = 81.8914
 
 [node name="settings2" type="Sprite" parent="."]
-position = Vector2( 222.34, 94.7799 )
-scale = Vector2( 0.06, 0.06 )
+position = Vector2( 148.518, 61.83 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 5 )
 
 [node name="exit2" type="Sprite" parent="."]
-position = Vector2( 222.34, 118.245 )
-scale = Vector2( 0.06, 0.06 )
+position = Vector2( 148.767, 73.1113 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 4 )
 
 [node name="new2" type="Sprite" parent="."]
-position = Vector2( 222.34, 47.8499 )
-scale = Vector2( 0.06, 0.06 )
+position = Vector2( 148.219, 39.9443 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 2 )
 
 [node name="load2" type="Sprite" parent="."]
-position = Vector2( 222.34, 71.3149 )
-scale = Vector2( 0.06, 0.06 )
+position = Vector2( 148.269, 50.9999 )
+scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -0.676874 )
 anchor_mode = 0
+current = true
 
 [connection signal="pressed" from="new" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
