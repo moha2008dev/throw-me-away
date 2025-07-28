@@ -26,60 +26,49 @@ margin_bottom = 40.0
 rect_scale = Vector2( 6.31337, 3.38913 )
 custom_styles/panel = SubResource( 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 48.0
-margin_top = -4.0
-margin_right = 111.0
-margin_bottom = 88.0
-rect_scale = Vector2( 0.6, 0.6 )
-
-[node name="Untitled07-28-202510-39-532" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 84.8022, 55.7831 )
-scale = Vector2( 0.0833333, 0.0833333 )
-texture = ExtResource( 5 )
-
-[node name="Untitled07-28-202510-39-5341" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 84.8022, 88.8747 )
-scale = Vector2( 0.0833333, 0.0833333 )
-texture = ExtResource( 4 )
-
-[node name="Untitled07-28-202510-39-536" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 84.8022, -4.38354 )
-scale = Vector2( 0.0833333, 0.0833334 )
-texture = ExtResource( 2 )
-
-[node name="Untitled07-28-202510-39-537" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 84.8022, 25.6997 )
-scale = Vector2( 0.0833333, 0.0833334 )
-texture = ExtResource( 3 )
-
 [node name="new" type="TextureButton" parent="."]
-margin_left = 213.0
-margin_top = 54.0
-margin_right = 241.0
-margin_bottom = 70.0
+margin_left = 194.527
+margin_top = 49.505
+margin_right = 222.527
+margin_bottom = 65.505
 
 [node name="load" type="TextureButton" parent="."]
-margin_left = 212.95
-margin_top = 72.1999
-margin_right = 240.95
-margin_bottom = 88.1999
+margin_left = 194.477
+margin_top = 67.7049
+margin_right = 222.477
+margin_bottom = 83.7049
 
 [node name="settings" type="TextureButton" parent="."]
-margin_left = 212.95
-margin_top = 90.2498
-margin_right = 240.95
-margin_bottom = 106.25
+margin_left = 194.477
+margin_top = 85.7549
+margin_right = 222.477
+margin_bottom = 101.755
 
 [node name="exit" type="TextureButton" parent="."]
-margin_left = 212.95
-margin_top = 110.105
-margin_right = 240.95
-margin_bottom = 126.105
+margin_left = 194.477
+margin_top = 105.61
+margin_right = 222.477
+margin_bottom = 121.61
+
+[node name="Untitled07-28-202510-39-532" type="Sprite" parent="."]
+position = Vector2( 208.408, 92.9749 )
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 5 )
+
+[node name="Untitled07-28-202510-39-5341" type="Sprite" parent="."]
+position = Vector2( 208.408, 112.83 )
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 4 )
+
+[node name="Untitled07-28-202510-39-536" type="Sprite" parent="."]
+position = Vector2( 208.408, 56.8749 )
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 2 )
+
+[node name="Untitled07-28-202510-39-537" type="Sprite" parent="."]
+position = Vector2( 208.408, 74.9249 )
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 3 )
 
 [connection signal="pressed" from="new" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
