@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Axe12.png-c85cbe43bc5abee6b5bb2546909f94b1.stex"
+path="res://.import/Axel2.png-7f334d5ed39448821cc582235e0a1eca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2d_art/Axe12.png"
-dest_files=[ "res://.import/Axe12.png-c85cbe43bc5abee6b5bb2546909f94b1.stex" ]
+source_file="res://2d_art/Axel2.png"
+dest_files=[ "res://.import/Axel2.png-7f334d5ed39448821cc582235e0a1eca.stex" ]
 
 [params]
 
