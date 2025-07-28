@@ -27,46 +27,46 @@ rect_scale = Vector2( 6.31337, 3.38913 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="new" type="TextureButton" parent="."]
-margin_left = 194.527
-margin_top = 49.505
-margin_right = 222.527
-margin_bottom = 65.505
+margin_left = 208.458
+margin_top = 40.4801
+margin_right = 236.458
+margin_bottom = 56.4801
 
 [node name="load" type="TextureButton" parent="."]
-margin_left = 194.477
-margin_top = 67.7049
-margin_right = 222.477
-margin_bottom = 83.7049
+margin_left = 208.408
+margin_top = 64.0949
+margin_right = 236.408
+margin_bottom = 80.095
 
 [node name="settings" type="TextureButton" parent="."]
-margin_left = 194.477
-margin_top = 85.7549
-margin_right = 222.477
-margin_bottom = 101.755
+margin_left = 208.408
+margin_top = 87.5599
+margin_right = 236.408
+margin_bottom = 103.56
 
 [node name="exit" type="TextureButton" parent="."]
-margin_left = 194.477
-margin_top = 105.61
-margin_right = 222.477
-margin_bottom = 121.61
+margin_left = 208.408
+margin_top = 111.025
+margin_right = 236.408
+margin_bottom = 127.025
 
-[node name="Untitled07-28-202510-39-532" type="Sprite" parent="."]
-position = Vector2( 208.408, 92.9749 )
+[node name="settings2" type="Sprite" parent="."]
+position = Vector2( 222.34, 94.7799 )
 scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 5 )
 
-[node name="Untitled07-28-202510-39-5341" type="Sprite" parent="."]
-position = Vector2( 208.408, 112.83 )
+[node name="exit2" type="Sprite" parent="."]
+position = Vector2( 222.34, 118.245 )
 scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 4 )
 
-[node name="Untitled07-28-202510-39-536" type="Sprite" parent="."]
-position = Vector2( 208.408, 56.8749 )
+[node name="new2" type="Sprite" parent="."]
+position = Vector2( 222.34, 47.8499 )
 scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 2 )
 
-[node name="Untitled07-28-202510-39-537" type="Sprite" parent="."]
-position = Vector2( 208.408, 74.9249 )
+[node name="load2" type="Sprite" parent="."]
+position = Vector2( 222.34, 71.3149 )
 scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 3 )
 
