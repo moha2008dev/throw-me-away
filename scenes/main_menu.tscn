@@ -27,27 +27,27 @@ margin_right = 111.0
 margin_bottom = 88.0
 rect_scale = Vector2( 0.6, 0.6 )
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="new" type="Button" parent="VBoxContainer"]
 margin_right = 63.0
 margin_bottom = 20.0
 text = "new"
 flat = true
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="load" type="Button" parent="VBoxContainer"]
 margin_top = 24.0
 margin_right = 63.0
 margin_bottom = 44.0
 text = "load"
 flat = true
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="settings" type="Button" parent="VBoxContainer"]
 margin_top = 48.0
 margin_right = 63.0
 margin_bottom = 68.0
 text = "settings"
 flat = true
 
-[node name="Button4" type="Button" parent="VBoxContainer"]
+[node name="quit" type="Button" parent="VBoxContainer"]
 margin_top = 72.0
 margin_right = 63.0
 margin_bottom = 92.0
@@ -58,3 +58,8 @@ flat = true
 anchor_mode = 0
 current = true
 zoom = Vector2( 0.22, 0.22 )
+
+[connection signal="pressed" from="VBoxContainer/new" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="VBoxContainer/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

@@ -1,3 +1,19 @@
 extends Control
 
-kfklmzmfl,
+var scene_go_to = preload("res://scenes/test_scene.tscn")
+
+
+func _on_new_pressed():
+	get_tree().change_scene_to(scene_go_to)
+
+
+func _on_load_pressed():
+	get_tree().change_scene_to(scene_go_to)
+
+
+func _on_settings_pressed():
+	get_tree().change_scene_to(scene_go_to)
+
+
+func _on_quit_pressed():
+	get_tree().quit()

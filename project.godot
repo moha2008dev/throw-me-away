@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="throw me away"
+run/main_scene="res://scenes/main_menu.tscn"
 config/icon="res://icon.png"
 
 [gui]
