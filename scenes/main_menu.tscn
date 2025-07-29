@@ -46,10 +46,11 @@ margin_right = 157.611
 margin_bottom = 79.4005
 
 [node name="credit" type="TextureButton" parent="."]
-margin_left = 1.24387
-margin_top = 63.4005
-margin_right = 29.2439
-margin_bottom = 79.4005
+margin_left = 1.49264
+margin_top = 63.6262
+margin_right = 41.4926
+margin_bottom = 103.626
+rect_scale = Vector2( 0.722988, 0.383216 )
 
 [node name="settings2" type="Sprite" parent="."]
 position = Vector2( 143.045, 53.0218 )
@@ -80,5 +81,4 @@ texture = ExtResource( 6 )
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="credit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="credit" to="." method="_on_credit_pressed"]
