@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
-[ext_resource path="res://2d_art/Untitled_07-28-2025_10-39-53_6.png" type="Texture" id=2]
-[ext_resource path="res://2d_art/Untitled_07-28-2025_10-39-53_7.png" type="Texture" id=3]
-[ext_resource path="res://2d_art/Untitled_07-28-2025_10-39-53_4_1.png" type="Texture" id=4]
-[ext_resource path="res://2d_art/Untitled_07-28-2025_10-39-53_2.png" type="Texture" id=5]
+[ext_resource path="res://2d_art/new.png" type="Texture" id=2]
+[ext_resource path="res://2d_art/load.png" type="Texture" id=3]
+[ext_resource path="res://2d_art/exit.png" type="Texture" id=4]
+[ext_resource path="res://2d_art/settings.png" type="Texture" id=5]
+[ext_resource path="res://credit.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0196078, 0.188235, 0.101961, 1 )
@@ -21,50 +22,63 @@ anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="new" type="TextureButton" parent="."]
-margin_left = 134.338
-margin_top = 32.5746
-margin_right = 162.338
-margin_bottom = 48.5746
+margin_left = 127.87
+margin_top = 8.12249
+margin_right = 155.87
+margin_bottom = 24.1225
 
 [node name="load" type="TextureButton" parent="."]
-margin_left = 134.338
-margin_top = 43.7799
-margin_right = 162.338
-margin_bottom = 59.78
+margin_left = 128.616
+margin_top = 27.7518
+margin_right = 156.616
+margin_bottom = 43.7519
 
 [node name="settings" type="TextureButton" parent="."]
-margin_left = 134.586
-margin_top = 54.6101
-margin_right = 162.586
-margin_bottom = 70.6102
+margin_left = 128.865
+margin_top = 46.0274
+margin_right = 156.865
+margin_bottom = 62.0275
 
 [node name="exit" type="TextureButton" parent="."]
-margin_left = 134.835
-margin_top = 65.8914
-margin_right = 162.835
-margin_bottom = 81.8914
+margin_left = 129.611
+margin_top = 63.4005
+margin_right = 157.611
+margin_bottom = 79.4005
+
+[node name="credit" type="TextureButton" parent="."]
+margin_left = 1.24387
+margin_top = 63.4005
+margin_right = 29.2439
+margin_bottom = 79.4005
 
 [node name="settings2" type="Sprite" parent="."]
-position = Vector2( 148.518, 61.83 )
-scale = Vector2( 0.03, 0.03 )
+position = Vector2( 143.045, 53.0218 )
+scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 5 )
 
 [node name="exit2" type="Sprite" parent="."]
-position = Vector2( 148.767, 73.1113 )
-scale = Vector2( 0.03, 0.03 )
+position = Vector2( 143.542, 70.3949 )
+scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 4 )
 
 [node name="new2" type="Sprite" parent="."]
-position = Vector2( 148.219, 39.9443 )
-scale = Vector2( 0.03, 0.03 )
+position = Vector2( 142.298, 15.3425 )
+scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 2 )
 
 [node name="load2" type="Sprite" parent="."]
-position = Vector2( 148.269, 50.9999 )
-scale = Vector2( 0.03, 0.03 )
+position = Vector2( 142.547, 34.295 )
+scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 3 )
+
+[node name="credit2" type="Sprite" parent="."]
+position = Vector2( 15.175, 70.395 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 6 )
 
 [connection signal="pressed" from="new" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="credit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="credit" to="." method="_on_credit_pressed"]
