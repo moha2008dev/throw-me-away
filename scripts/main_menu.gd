@@ -19,4 +19,4 @@ func _on_exit_pressed():
 
 
 func _on_credit_pressed():
-	get_tree().change_scene("res://scenes/test_scene.tscn")
+	get_tree().change_scene("res://scenes/credit.tscn")

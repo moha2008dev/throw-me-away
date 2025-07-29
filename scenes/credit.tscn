@@ -1,0 +1,147 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fonts/Wasted-Vindey.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/credit.gd" type="Script" id=2]
+[ext_resource path="res://2d_art/exit.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0196078, 0.188235, 0.101961, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 114, 328 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "up"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 90, 328 ), Vector2( 90, -1840 ) ]
+}
+
+[node name="credit" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 0.901
+anchor_bottom = 0.886
+margin_right = 62.36
+margin_bottom = 43.04
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 114.0
+margin_top = 328.0
+margin_right = 611.0
+margin_bottom = 2155.0
+rect_scale = Vector2( 1, 1.01345 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Game developed by Space Game Studio
+
+
+
+
+
+
+
+
+
+
+
+founder:
+
+Moha_dev
+
+Producer:
+moha_dev
+
+Game Designer & director:
+Iyed Abbes
+
+Assistant Game Design :
+monday
+
+level designer:
+monday
+
+Narrator:
+monday
+
+Lead Programmer:
+monday
+
+Programmers:
+
+Gameplay Programmer:
+rashad
+
+UI Programmer:
+moha_dev
+
+Ai Programmer:
+turbo code
+
+Art Team:
+negan.15
+wadoud
+
+Animator:
+karar
+
+Data Manager:
+moha_dev
+
+Sound Designer:
+wadoud
+
+Game Tester:
+py_adpro
+"
+align = 1
+autowrap = true
+
+[node name="Exit" type="Sprite" parent="."]
+position = Vector2( 50, 328 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 3 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 13.0
+margin_top = 310.0
+margin_right = 86.0
+margin_bottom = 350.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/up = SubResource( 4 )
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
