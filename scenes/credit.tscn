@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://fonts/Minecraftia-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/Wasted-Vindey.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/credit.gd" type="Script" id=2]
 [ext_resource path="res://2d_art/exit.png" type="Texture" id=3]
 
@@ -60,7 +60,7 @@ custom_styles/panel = SubResource( 1 )
 margin_left = 114.0
 margin_top = 328.0
 margin_right = 611.0
-margin_bottom = 2681.0
+margin_bottom = 2155.0
 rect_scale = Vector2( 1, 1.01345 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )

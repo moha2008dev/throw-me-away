@@ -1,5 +1,16 @@
 extends KinematicBody2D
 
+var current_target = null
+var health = 10
+
+func take_damage(amount):
+	health -= amount
+
+func _process(delta):
+	if health <= 0:
+		get_tree().change_scene("res://scenes/main_menu.tscn")
+	$ProgressBar.value = health
+
 var velocity : Vector2 = Vector2()
 var speed : int = 300
 var slide_speed : int = 600
@@ -59,3 +70,4 @@ func attack() -> void:
 		$Node2D/AnimationPlayer.play("light_attack")
 	if Input.is_action_just_pressed("heavy_attack"):
 		$Node2D/AnimationPlayer.play("heavy_attack")
+
