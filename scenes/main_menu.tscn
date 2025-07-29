@@ -4,7 +4,7 @@
 [ext_resource path="res://2d_art/new.png" type="Texture" id=2]
 [ext_resource path="res://2d_art/load.png" type="Texture" id=3]
 [ext_resource path="res://2d_art/exit.png" type="Texture" id=4]
-[ext_resource path="res://2d_art/settings.png" type="Texture" id=5]
+[ext_resource path="res://2d_art/options.png" type="Texture" id=5]
 [ext_resource path="res://credit.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -54,11 +54,6 @@ margin_right = 41.4926
 margin_bottom = 103.626
 rect_scale = Vector2( 0.722988, 0.383216 )
 
-[node name="settings2" type="Sprite" parent="."]
-position = Vector2( 143.045, 53.0218 )
-scale = Vector2( 0.05, 0.05 )
-texture = ExtResource( 5 )
-
 [node name="exit2" type="Sprite" parent="."]
 position = Vector2( 143.542, 70.3949 )
 scale = Vector2( 0.05, 0.05 )
@@ -78,6 +73,11 @@ texture = ExtResource( 3 )
 position = Vector2( 15.175, 70.395 )
 scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 6 )
+
+[node name="Options" type="Sprite" parent="."]
+position = Vector2( 143.293, 51.8937 )
+scale = Vector2( 0.045, 0.05 )
+texture = ExtResource( 5 )
 
 [connection signal="pressed" from="new" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]

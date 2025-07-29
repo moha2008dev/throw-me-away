@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Axe.png-ee39864b5d0e8a935f0b00d6e5093dab.stex"
+path="res://.import/pause menu.png-05824704943321f48a8bfa229bc6a70e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2d_art/Axe.png"
-dest_files=[ "res://.import/Axe.png-ee39864b5d0e8a935f0b00d6e5093dab.stex" ]
+source_file="res://2d_art/pause menu.png"
+dest_files=[ "res://.import/pause menu.png-05824704943321f48a8bfa229bc6a70e.stex" ]
 
 [params]
 

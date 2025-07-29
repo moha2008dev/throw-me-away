@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Idle.png-58b2a41bcf7b956053fc42bbad77d301.stex"
+path="res://.import/player no sheld.png-77c1046042ddd277c9b04125d8c1407e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2d_art/Samurai/Idle.png"
-dest_files=[ "res://.import/Idle.png-58b2a41bcf7b956053fc42bbad77d301.stex" ]
+source_file="res://2d_art/player no sheld.png"
+dest_files=[ "res://.import/player no sheld.png-77c1046042ddd277c9b04125d8c1407e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

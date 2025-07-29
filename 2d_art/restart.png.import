@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jump.png-40e5700c6ac3574cf8bcb0fb30e52c31.stex"
+path="res://.import/restart.png-44d8f3aa998ee8405a7d62525f1e4608.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2d_art/Samurai/Jump.png"
-dest_files=[ "res://.import/Jump.png-40e5700c6ac3574cf8bcb0fb30e52c31.stex" ]
+source_file="res://2d_art/restart.png"
+dest_files=[ "res://.import/restart.png-44d8f3aa998ee8405a7d62525f1e4608.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
