@@ -3,11 +3,13 @@ extends Control
 var scene_go_to = preload("res://scenes/World.tscn")
 
 func _on_new_pressed():
-	get_tree().change_scene_to(scene_go_to)
+	var loading_scene = preload("res://scenes/loading scenes/loading.tscn")
+	get_tree().change_scene_to(loading_scene)
 
 
 func _on_load_pressed():
-	get_tree().change_scene_to(scene_go_to)
+	var loading_scene = preload("res://scenes/loading scenes/loading.tscn")
+	get_tree().change_scene_to(loading_scene)
 
 
 func _on_settings_pressed():
