@@ -38,10 +38,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -9.9, 20 ),
+"times": PoolRealArray( 0, 20 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 90, 328 ), Vector2( 90, -2396 ) ]
+"values": [ Vector2( 90, 122 ), Vector2( 90, -2132 ) ]
 }
 
 [node name="credit" type="Control"]
