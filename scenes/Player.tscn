@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 
@@ -37,10 +37,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../AttackArea/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "heavy_attack"
-length = 0.4
+length = 0.5
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rotation_degrees")
@@ -66,10 +78,22 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../AttackArea/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "light_attack"
-length = 0.2
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rotation_degrees")
 tracks/0/interp = 1
@@ -94,6 +118,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../AttackArea/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 33.0151
 
 [sub_resource type="Gradient" id=8]
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
@@ -133,6 +172,15 @@ anims/RESET = SubResource( 5 )
 anims/heavy_attack = SubResource( 6 )
 anims/light_attack = SubResource( 7 )
 
+[node name="AttackArea" type="Area2D" parent="."]
+visible = false
+position = Vector2( 45, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2( -6, 0 )
+shape = SubResource( 11 )
+disabled = true
+
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2( 0, 16 )
 emitting = false
@@ -160,6 +208,10 @@ one_shot = true
 wait_time = 0.2
 one_shot = true
 
+[node name="WallTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [node name="ProgressBar" type="ProgressBar" parent="."]
 margin_left = -33.0
 margin_top = -36.0
@@ -171,4 +223,36 @@ max_value = 10.0
 value = 2.0
 percent_visible = false
 
+[node name="WallRayCasts" type="Node2D" parent="."]
+visible = false
+
+[node name="R1" type="RayCast2D" parent="WallRayCasts"]
+enabled = true
+cast_to = Vector2( 22, 0 )
+
+[node name="L1" type="RayCast2D" parent="WallRayCasts"]
+enabled = true
+cast_to = Vector2( -22, 0 )
+
+[node name="R2" type="RayCast2D" parent="WallRayCasts"]
+position = Vector2( 0, 10 )
+enabled = true
+cast_to = Vector2( 22, 0 )
+
+[node name="L2" type="RayCast2D" parent="WallRayCasts"]
+position = Vector2( 0, 10 )
+enabled = true
+cast_to = Vector2( -22, 0 )
+
+[node name="R3" type="RayCast2D" parent="WallRayCasts"]
+position = Vector2( 0, -10 )
+enabled = true
+cast_to = Vector2( 22, 0 )
+
+[node name="L3" type="RayCast2D" parent="WallRayCasts"]
+position = Vector2( 0, -10 )
+enabled = true
+cast_to = Vector2( -22, 0 )
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="SlideTimer" to="." method="_on_SlideTimer_timeout"]

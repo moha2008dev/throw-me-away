@@ -1,11 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/AI_enemy/soldier.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 924.5, 10 )
+extents = Vector2( 924, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10, 160 )
+
+[sub_resource type="QuadMesh" id=8]
+size = Vector2( 20, 320 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 262, 98.25 )
@@ -20,17 +25,14 @@ length = 0.001
 
 [node name="Node2D" type="Node2D"]
 
-[node name="camera" type="KinematicBody2D" parent="."]
-script = ExtResource( 3 )
-
-[node name="Camera2D" type="Camera2D" parent="camera"]
-position = Vector2( 320, 182 )
-current = true
-smoothing_enabled = true
-smoothing_speed = 7.0
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 203, 321 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_bottom = 360
+smoothing_enabled = true
+smoothing_speed = 7.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 320, 370 )
@@ -38,6 +40,22 @@ position = Vector2( 320, 370 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 0.5, 0 )
 shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -330, -170 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D/CollisionShape2D2"]
+show_behind_parent = true
+mesh = SubResource( 8 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -227, -224 )
+shape = SubResource( 7 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D/CollisionShape2D3"]
+show_behind_parent = true
+mesh = SubResource( 8 )
 
 [node name="area" type="Area2D" parent="."]
 position = Vector2( 517, 343 )

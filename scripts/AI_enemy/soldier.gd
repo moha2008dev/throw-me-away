@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 var speed = 50
 var direction = 1 
 var patrol_range = 220
@@ -22,7 +21,7 @@ func _ready():
 	start_position = global_position
 	$s.play("walk")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if go == false:
 		if is_paused:
 			return
@@ -106,7 +105,8 @@ func attack():
 #				direction = Vector2.LEFT
 #			move_and_slide(direction * speed)
 #
-	$ProgressBar.value = health
+func _process(delta):
+	$ProgressBar.value = lerp($ProgressBar.value,health,12*delta)
 	
 	
 	if health <= 0:
@@ -115,8 +115,8 @@ func attack():
 		$CollisionShape2D.disabled = true
 		$AttackArea/CollisionShape2D.disabled = true
 		$s.play("dead")
-		if $s.frame == 7:
-			queue_free()
+		yield($s,"animation_finished")
+		queue_free()
 
 
 
