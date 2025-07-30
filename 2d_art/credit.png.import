@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/credit.png-9b8ffed79b433f134a2904442f3a6de5.stex"
+path="res://.import/credit.png-647ed89ab7b5683d4f740e0d6d65ad33.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://credit.png"
-dest_files=[ "res://.import/credit.png-9b8ffed79b433f134a2904442f3a6de5.stex" ]
+source_file="res://2d_art/credit.png"
+dest_files=[ "res://.import/credit.png-647ed89ab7b5683d4f740e0d6d65ad33.stex" ]
 
 [params]
 
