@@ -4,16 +4,16 @@ var scene_go_to = preload("res://scenes/World.tscn")
 
 func _on_new_pressed():
 	var loading_scene = preload("res://scenes/loading scenes/loading.tscn")
-	get_tree().change_scene_to(loading_scene)
+	Global.change_scene_to(loading_scene)
 
 
 func _on_load_pressed():
 	var loading_scene = preload("res://scenes/loading scenes/loading.tscn")
-	get_tree().change_scene_to(loading_scene)
+	Global.change_scene_to(loading_scene)
 
 
 func _on_settings_pressed():
-	get_tree().change_scene("res://scenes/test_scene.tscn")
+	Global.change_scene("res://scenes/test_scene.tscn")
 
 
 func _on_exit_pressed():
@@ -21,4 +21,4 @@ func _on_exit_pressed():
 
 
 func _on_credit_pressed():
-	get_tree().change_scene("res://scenes/credit.tscn")
+	Global.change_scene("res://scenes/credit.tscn","#05301a")

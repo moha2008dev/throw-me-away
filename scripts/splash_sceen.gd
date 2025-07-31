@@ -1,9 +1,6 @@
 extends Control
 
 func _ready():
-	$AnimationPlayer.play("fade in_out")
-	
-	
+	yield(get_tree().create_timer(3.5),"timeout")
+	Global.change_scene("res://scenes/main_menu.tscn")
 
-func _on_AnimationPlayer_animation_finished(anim_name):
-	get_tree().change_scene("res://scenes/main_menu.tscn")

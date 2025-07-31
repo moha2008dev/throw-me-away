@@ -25,7 +25,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 114, 328 ) ]
+"values": [ Vector2( 90, 122 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -57,10 +57,10 @@ margin_bottom = 43.04
 custom_styles/panel = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 114.0
-margin_top = 328.0
-margin_right = 611.0
-margin_bottom = 2681.0
+margin_left = 90.0
+margin_top = 122.0
+margin_right = 587.0
+margin_bottom = 2475.0
 rect_scale = Vector2( 1, 1.01345 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )

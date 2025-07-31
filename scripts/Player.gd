@@ -7,10 +7,12 @@ var sliding : bool = false
 var jump : int = -360
 var gravity : int = 1200
 var double_jump : bool = false
+
 var health : float = 10
-var current_dmg : int = 1
+var current_dmg : float = 1
 var light_dmg : int = 1
 var heavy_dmg : int = 3
+var jump_attack : bool = false
 
 func _ready() -> void:
 	for ray in $WallRayCasts.get_children():
@@ -36,10 +38,14 @@ func move() -> void:
 
 func jumping(del) -> void:
 	if !is_on_floor():
-		if !Rwall() && !Lwall():
-			velocity.y += gravity*del
-		else:
+		if !jump_attack && (Rwall() || Lwall()):
 			velocity.y = 60 if velocity.y > 0 else velocity.y + gravity*del
+		else:
+			if jump_attack:
+				velocity.y += gravity*del*3
+				current_dmg = int(velocity.y/300)+1
+			else:
+				velocity.y += gravity*del
 		if Input.is_action_just_pressed("up"):
 			if !$CoyteTimer.is_stopped():
 				velocity.y = jump
@@ -47,13 +53,19 @@ func jumping(del) -> void:
 				velocity.y = jump
 				velocity.x = speed if Lwall() else -speed
 				$WallTimer.start()
-			elif double_jump:
+			elif double_jump && $Node2D/AnimationPlayer.current_animation != "jump_attack":
 				velocity.y = jump
 				double_jump = false
 			else:
 				$BufferTimer.start()
 	else:
 		$CoyteTimer.start()
+		if jump_attack:
+			$AttackDelay.start()
+			jump_attack = false
+			print(current_dmg)
+			Global.cam.shake(0.05*current_dmg,current_dmg/6)
+			$Node2D/AnimationPlayer.play("RESET")
 		double_jump = true
 		velocity.y = 1
 		if Input.is_action_just_pressed("up") or !$BufferTimer.is_stopped():
@@ -71,30 +83,48 @@ func _on_SlideTimer_timeout() -> void:
 	sliding = false
 
 func attack() -> void:
-	if $Node2D/AnimationPlayer.is_playing():
+	if $Node2D/AnimationPlayer.is_playing() || !$AttackDelay.is_stopped() || Rwall() || Lwall() || !$WallTimer.is_stopped() || jump_attack:
 		return
+	if !is_on_floor() && Input.is_action_pressed("light_attack") && Input.is_action_pressed("heavy_attack"):
+			$Node2D/AnimationPlayer.play("jump_attack")
+			jump_attack = true
+			return
 	if Input.is_action_just_pressed("light_attack"):
+		if !is_on_floor():
+			yield(get_tree().create_timer(0.1),"timeout")
+			if Input.is_action_pressed("light_attack") && Input.is_action_pressed("heavy_attack"):
+				return
 		$Node2D/AnimationPlayer.play("light_attack")
 		current_dmg = light_dmg
 	if Input.is_action_just_pressed("heavy_attack"):
+		if !is_on_floor():
+			yield(get_tree().create_timer(0.1),"timeout")
+			if Input.is_action_pressed("light_attack") && Input.is_action_pressed("heavy_attack"):
+				return
 		$Node2D/AnimationPlayer.play("heavy_attack")
 		current_dmg = heavy_dmg
+	if $Node2D/AnimationPlayer.is_playing():
+		yield($Node2D/AnimationPlayer,"animation_finished")
+		$AttackDelay.start()
 
 func take_damage(amount) -> void:
 	health -= amount
+	Global.cam.shake(0.2,amount*0.2)
 
 func _process(delta) -> void:
-	if health <= 0:
-# warning-ignore:return_value_discarded
-		get_tree().change_scene("res://scenes/main_menu.tscn")
 	$ProgressBar.value = lerp($ProgressBar.value,health,12*delta)
+	if health <= 0:
+		$ProgressBar.hide()
+		Global.reload_scene()
 
 func _on_Area2D_body_entered(body) -> void:
 	if body.is_in_group("player2_units"):
 		body.take_damage(current_dmg)
-#		Engine.time_scale = 0.05
-#		yield(get_tree().create_timer(0.01),"timeout")
-#		Engine.time_scale = 1
+		if current_dmg <5:return
+		Engine.time_scale = 0
+		Global.create_timer(0.2)
+		yield(Global,"timeout")
+		Engine.time_scale = 1
 
 func Rwall() -> bool:
 	for ray in $WallRayCasts.get_children():
@@ -107,5 +137,3 @@ func Lwall() -> bool:
 		if is_on_wall() && !is_on_floor() && ray.is_colliding() && ray.name.begins_with("L"):
 			return true
 	return false
-
-

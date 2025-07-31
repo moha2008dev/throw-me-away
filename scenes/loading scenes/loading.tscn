@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/loading.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Minecraftia-Regular.ttf" type="DynamicFontData" id=2]
@@ -12,10 +12,10 @@ outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=7]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("../Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -24,34 +24,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Label:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ "lioading" ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+"values": [ "loading" ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -92,7 +65,7 @@ margin_top = -110.0
 margin_right = 87.5
 margin_bottom = -68.0
 custom_fonts/font = SubResource( 2 )
-text = "lioading"
+text = "loading"
 align = 1
 
 [node name="Label2" type="Label" parent="."]
@@ -108,15 +81,10 @@ custom_fonts/font = SubResource( 2 )
 text = "please wait"
 align = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 648.0
-margin_bottom = 365.0
-color = Color( 0, 0, 0, 1 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 3 )
-anims/fade_in = SubResource( 4 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimationPlayer")
+autoplay = "loading"
+anims/RESET = SubResource( 7 )
 anims/loading = SubResource( 6 )
