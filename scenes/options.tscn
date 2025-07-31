@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://fonts/Minecraftia-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/options.gd" type="Script" id=2]
@@ -37,6 +37,12 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
 [sub_resource type="DynamicFont" id=6]
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -52,10 +58,14 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxEmpty" id=13]
+
 [sub_resource type="DynamicFont" id=9]
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=14]
 
 [node name="options" type="Control"]
 anchor_right = 1.0
@@ -74,9 +84,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -153.5
+margin_left = -213.5
 margin_top = -45.0
-margin_right = 141.5
+margin_right = 201.5
 margin_bottom = 162.0
 custom_styles/panel = SubResource( 2 )
 
@@ -122,23 +132,51 @@ align = 1
 valign = 1
 
 [node name="sfx" type="CheckBox" parent="Panel"]
-margin_left = 178.0
+margin_left = 120.0
 margin_top = 149.0
-margin_right = 202.0
-margin_bottom = 173.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 5 )
-text = " sfx musix"
-align = 1
-
-[node name="auto save" type="CheckBox" parent="Panel"]
-margin_left = 315.0
-margin_top = 149.0
-margin_right = 437.0
+margin_right = 248.0
 margin_bottom = 179.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 5 )
-text = " auto save"
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/hover_pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = " sfx musix"
+align = 1
+
+[node name="v-sync" type="CheckBox" parent="Panel"]
+margin_left = 255.0
+margin_top = 149.0
+margin_right = 383.0
+margin_bottom = 179.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/hover_pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+text = "v-sync"
+align = 1
+
+[node name="Show FPS" type="CheckBox" parent="Panel"]
+margin_left = 390.0
+margin_top = 149.0
+margin_right = 518.0
+margin_bottom = 179.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/hover_pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
+text = "Show FPS"
 align = 1
 
 [node name="resolution" type="OptionButton" parent="Panel"]
@@ -208,6 +246,11 @@ margin_right = 448.0
 margin_bottom = 331.0
 custom_colors/font_color = Color( 0.882353, 0.211765, 0.211765, 1 )
 custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 13 )
 text = "reset"
 flat = true
 
@@ -218,11 +261,17 @@ margin_right = 228.0
 margin_bottom = 331.0
 custom_colors/font_color = Color( 0.686275, 0.596078, 0.596078, 1 )
 custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 14 )
+custom_styles/normal = SubResource( 14 )
 text = "exit"
 flat = true
 
 [connection signal="toggled" from="Panel/sfx" to="." method="_on_sfx_toggled"]
-[connection signal="toggled" from="Panel/auto save" to="." method="_on_auto_save_toggled"]
+[connection signal="toggled" from="Panel/v-sync" to="." method="_on_vsync_toggled"]
+[connection signal="toggled" from="Panel/Show FPS" to="." method="_on_Show_FPS_toggled"]
 [connection signal="item_selected" from="Panel/resolution" to="." method="_on_resolution_item_selected"]
 [connection signal="item_selected" from="Panel/screen" to="." method="_on_screen_item_selected"]
 [connection signal="item_selected" from="Panel/fps" to="." method="_on_fps_item_selected"]

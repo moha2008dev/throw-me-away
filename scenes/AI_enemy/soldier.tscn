@@ -224,7 +224,6 @@ script = ExtResource( 2 )
 position = Vector2( 2, -21 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 18 )
-animation = "dead"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, -1.5 )
@@ -245,6 +244,10 @@ custom_styles/bg = SubResource( 34 )
 max_value = 4.0
 value = 2.0
 percent_visible = false
+
+[node name="KnockBack" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_AttackArea_body_exited"]

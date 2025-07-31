@@ -12,7 +12,7 @@ var health = 4
 var current_target = null
 var targets_in_range = []
 var aleady_attacked = false
-var gravity = 15
+var gravity = 20
 var motion = Vector2(0,0)
 var go = false
 var mon = Vector2()
@@ -21,7 +21,6 @@ onready var p = $"../Player"
 
 func _ready():
 	start_position = global_position
-
 
 func _physics_process(_delta):
 	if go == false:

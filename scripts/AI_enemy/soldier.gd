@@ -12,18 +12,25 @@ var health = 4
 var current_target = null
 var targets_in_range = []
 var aleady_attacked = false
-var gravity = 15
+var gravity = 20
 var motion = Vector2(0,0)
 var go = false
 var mon = Vector2()
 var attack = false
+var knockback_power = Vector2()
 onready var p = $"../Player"
 
 func _ready():
 	start_position = global_position
 
-
-func _physics_process(_delta):
+func _physics_process(delta):
+	if !$KnockBack.is_stopped():
+		if !is_on_floor():
+			knockback_power.y += gravity*60*delta
+			$s.play("default")
+		aleady_attacked = false
+		move_and_slide(knockback_power,Vector2.UP)
+		return
 	if go == false:
 		if is_paused:
 			return
@@ -118,6 +125,7 @@ func attack():
 			if health > 0:
 				if attack == true:
 					$s.animation = "run"
+					aleady_attacked = false
 					$s.play()
 				else:
 					$s.animation = "walk"
@@ -133,8 +141,9 @@ func _process(delta):
 		$ProgressBar.visible = false
 		speed = 0
 		gravity = 0
+		go = false;is_paused = true
 		$CollisionShape2D.disabled = true
-		$AttackArea/CollisionShape2D.disabled = true
+		$AttackArea/CollisionSdhape2D.disabled = true
 		$s.play("dead")
 		if $s.frame == 6:
 			queue_free()
@@ -144,6 +153,10 @@ func _process(delta):
 
 func take_damage(amount):
 	health -= amount
+	if health > 0:
+		var dir = 1 if $s.flip_h else -1
+		knockback_power = Vector2(200*direction *dir,-300)
+		$KnockBack.start()
 
 
 
@@ -166,7 +179,4 @@ func _on_AttackArea_body_exited(body):
 		targets_in_range.erase(body)
 	if body == current_target:
 		current_target = null
-
-
-
 

@@ -261,5 +261,9 @@ margin_bottom = -40.0
 custom_fonts/font = SubResource( 42 )
 text = "solider 2"
 
+[node name="KnockBack" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_AttackArea_body_exited"]

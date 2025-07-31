@@ -54,3 +54,7 @@ func _process(delta):
 		if elapsed >= duration:
 			timer_on = false
 			emit_signal("timeout")
+	$CanvasLayer/Label.text = str(Engine.get_frames_per_second())
+
+func show_fps(x:bool)->void:
+	$CanvasLayer/Label.visible = x

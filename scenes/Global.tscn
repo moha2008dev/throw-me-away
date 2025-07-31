@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Global.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Minecraftia-Regular.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="Animation" id=2]
 resource_name = "fade_out"
@@ -14,8 +15,13 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0.0745098, 0.0745098, 0.0745098, 1 ), Color( 0.0745098, 0.0745098, 0.0745098, 0 ) ]
+"values": [ Color( 0, 0, 0, 1 ), Color( 0.0745098, 0.0745098, 0.0745098, 0 ) ]
 }
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
 [node name="Global" type="Control"]
 pause_mode = 2
@@ -26,8 +32,13 @@ script = ExtResource( 1 )
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect"]
 autoplay = "fade_out"
 anims/fade_out = SubResource( 2 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 3 )
+align = 1
