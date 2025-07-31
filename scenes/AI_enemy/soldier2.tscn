@@ -1,6 +1,7 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://scripts/AI_enemy/soldier2.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Minecraftia-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://2d_art/samurai just prototype/Walk.png" type="Texture" id=3]
 [ext_resource path="res://2d_art/samurai just prototype/Attack_3.png" type="Texture" id=4]
 [ext_resource path="res://2d_art/samurai just prototype/Run.png" type="Texture" id=5]
@@ -217,6 +218,12 @@ border_color = Color( 0, 0, 0, 0 )
 bg_color = Color( 0, 0, 0, 0.454902 )
 border_color = Color( 0.8, 0.8, 0.8, 0 )
 
+[sub_resource type="DynamicFont" id=42]
+size = 10
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
 [node name="soldier2" type="KinematicBody2D" groups=["player2_units"]]
 script = ExtResource( 1 )
 
@@ -245,6 +252,14 @@ custom_styles/bg = SubResource( 34 )
 max_value = 4.0
 value = 2.0
 percent_visible = false
+
+[node name="Label" type="Label" parent="."]
+margin_left = -25.0
+margin_top = 31.0
+margin_right = 26.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 42 )
+text = "solider 2"
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_AttackArea_body_exited"]
