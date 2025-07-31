@@ -132,6 +132,7 @@ region_enabled = true
 region_rect = Rect2( 457, 272, 167, 235 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_right = 639.0
 margin_bottom = 361.0
 color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
