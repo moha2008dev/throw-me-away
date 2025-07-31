@@ -7,7 +7,6 @@ var sliding : bool = false
 var jump : int = -360
 var gravity : int = 1200
 var double_jump : bool = false
-
 var health : float = 10
 var current_dmg : int = 1
 var light_dmg : int = 1
@@ -108,3 +107,5 @@ func Lwall() -> bool:
 		if is_on_wall() && !is_on_floor() && ray.is_colliding() && ray.name.begins_with("L"):
 			return true
 	return false
+
+

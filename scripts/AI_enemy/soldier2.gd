@@ -4,10 +4,10 @@ extends KinematicBody2D
 var player = null
 var speed = 50
 var direction = 1 
-var patrol_range = 250
+var patrol_range = 580
 var start_position
 var is_paused = false
-var damage = 2
+var damage = 3
 var health = 4
 var current_target = null
 var targets_in_range = []
@@ -49,7 +49,7 @@ func _physics_process(_delta):
 			$s.flip_h = true
 		else:
 			$s.flip_h = false
-	
+
 
 
 
@@ -62,40 +62,7 @@ func fir():
 		mon.y += gravity
 	mon = move_and_slide(mon, Vector2.UP)
 
-
-
-
-
-
-
-func _on_area_body_entered(body):
-	if body.is_in_group("player1_units"):
-		attack = true
-		$s.play("run")
-		speed = 80
-		go = true
-		player = body
-
-
-
-func _on_area_body_exited(body):
-	if body.is_in_group("player1_units"):
-		attack = false
-		$s.play("walk")
-		speed = 50
-		go = false
-		player = null
-
-
-
-
-
-
-
-
-
-
-
+var att = false
 
 func attack():
 	if current_target and is_instance_valid(current_target):
@@ -116,13 +83,8 @@ func attack():
 			current_target = targets_in_range[0]
 		else:
 			if health > 0:
-				if attack == true:
-					$s.animation = "run"
-					$s.play()
-				else:
-					$s.animation = "walk"
-					$s.play()
-
+				$s.animation = "walk"
+				$s.play()
 
 
 func _process(delta):
@@ -130,6 +92,7 @@ func _process(delta):
 	
 	
 	if health <= 0:
+		
 		$ProgressBar.visible = false
 		speed = 0
 		gravity = 0
@@ -170,3 +133,25 @@ func _on_AttackArea_body_exited(body):
 
 
 
+func _on_attack_animation_finished(anim_name):
+	att = true
+
+
+
+
+
+
+
+
+func _on_area2_body_entered(body):
+	if body.is_in_group("player1_units"):
+		speed = 50
+		go = true
+		player = body
+
+
+func _on_area2_body_exited(body):
+	if body.is_in_group("player1_units"):
+		speed = 50
+		go = false
+		player = null
