@@ -17,10 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://scenes/Global.tscn"
-
-[debug]
-
-settings/stdout/print_fps=true
+global_vars_funcs="*res://scripts/global scripts/vars_funcs.gd"
 
 [display]
 

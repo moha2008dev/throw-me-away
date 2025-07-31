@@ -13,7 +13,7 @@ func _on_load_pressed():
 
 
 func _on_settings_pressed():
-	Global.change_scene("res://scenes/test_scene.tscn")
+	Global.change_scene("res://scenes/options.tscn")
 
 
 func _on_exit_pressed():
