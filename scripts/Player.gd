@@ -46,6 +46,11 @@ func jumping(del) -> void:
 				current_dmg = int(velocity.y/300)+1
 			else:
 				velocity.y += gravity*del
+		if !$BufferTimer.is_stopped() && (Rwall() or Lwall()):
+				velocity.y = jump
+				velocity.x = speed if Lwall() else -speed
+				$WallTimer.start()
+				$BufferTimer.stop()
 		if Input.is_action_just_pressed("up"):
 			if !$CoyteTimer.is_stopped():
 				velocity.y = jump
@@ -53,7 +58,7 @@ func jumping(del) -> void:
 				velocity.y = jump
 				velocity.x = speed if Lwall() else -speed
 				$WallTimer.start()
-			elif double_jump && $Node2D/AnimationPlayer.current_animation != "jump_attack":
+			elif double_jump && !jump_attack && $WallTimer.is_stopped():
 				velocity.y = jump
 				double_jump = false
 			else:
