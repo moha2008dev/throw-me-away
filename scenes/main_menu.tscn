@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://2d_art/new.png" type="Texture" id=2]
 [ext_resource path="res://2d_art/load.png" type="Texture" id=3]
 [ext_resource path="res://2d_art/exit.png" type="Texture" id=4]
+[ext_resource path="res://2d_art/assettest/back.png" type="Texture" id=5]
 [ext_resource path="res://2d_art/credit.png" type="Texture" id=6]
 [ext_resource path="res://2d_art/options.png" type="Texture" id=7]
+[ext_resource path="res://2d_art/assettest/middle.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0196078, 0.188235, 0.101961, 1 )
@@ -53,6 +55,80 @@ margin_top = 63.6262
 margin_right = 41.4926
 margin_bottom = 103.626
 rect_scale = Vector2( 0.722988, 0.383216 )
+
+[node name="Back" type="Sprite" parent="."]
+position = Vector2( 17.1589, 41.4666 )
+scale = Vector2( 0.32441, 0.346361 )
+texture = ExtResource( 5 )
+
+[node name="Back2" type="Sprite" parent="."]
+position = Vector2( 53.4798, 41.4666 )
+scale = Vector2( -0.324, 0.346 )
+texture = ExtResource( 5 )
+
+[node name="Back3" type="Sprite" parent="."]
+position = Vector2( 89.8008, 41.4666 )
+scale = Vector2( 0.32441, 0.346361 )
+texture = ExtResource( 5 )
+
+[node name="Back5" type="Sprite" parent="."]
+position = Vector2( 162.194, 41.4666 )
+scale = Vector2( 0.32441, 0.346361 )
+texture = ExtResource( 5 )
+
+[node name="Back4" type="Sprite" parent="."]
+position = Vector2( 126.122, 41.4666 )
+scale = Vector2( -0.324, 0.346 )
+texture = ExtResource( 5 )
+
+[node name="Middle2" type="Sprite" parent="."]
+position = Vector2( 29.8528, 41.5149 )
+rotation = 3.14159
+scale = Vector2( 0.324, -0.346 )
+texture = ExtResource( 8 )
+
+[node name="Middle" type="Sprite" parent="."]
+position = Vector2( 9.20461, 41.5149 )
+scale = Vector2( 0.32441, 0.346361 )
+texture = ExtResource( 8 )
+
+[node name="Middle3" type="Sprite" parent="."]
+position = Vector2( 71.1493, 41.5149 )
+rotation = 3.14159
+scale = Vector2( 0.324, -0.346 )
+texture = ExtResource( 8 )
+
+[node name="Middle4" type="Sprite" parent="."]
+position = Vector2( 50.501, 41.5149 )
+scale = Vector2( 0.32441, 0.346361 )
+texture = ExtResource( 8 )
+
+[node name="Middle5" type="Sprite" parent="."]
+position = Vector2( 112.446, 41.5149 )
+rotation = 3.14159
+scale = Vector2( 0.324, -0.346 )
+texture = ExtResource( 8 )
+
+[node name="Middle6" type="Sprite" parent="."]
+position = Vector2( 91.7974, 41.5149 )
+scale = Vector2( 0.32441, 0.346361 )
+texture = ExtResource( 8 )
+
+[node name="Middle7" type="Sprite" parent="."]
+position = Vector2( 153.742, 41.5149 )
+rotation = 3.14159
+scale = Vector2( 0.324, -0.346 )
+texture = ExtResource( 8 )
+
+[node name="Middle8" type="Sprite" parent="."]
+position = Vector2( 133.094, 41.5149 )
+scale = Vector2( 0.32441, 0.346361 )
+texture = ExtResource( 8 )
+
+[node name="Middle9" type="Sprite" parent="."]
+position = Vector2( 174.39, 41.5149 )
+scale = Vector2( 0.32441, 0.346361 )
+texture = ExtResource( 8 )
 
 [node name="exit2" type="Sprite" parent="."]
 position = Vector2( 142, 70.395 )
