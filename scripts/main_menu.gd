@@ -13,12 +13,26 @@ func _on_load_pressed():
 
 
 func _on_settings_pressed():
-	Global.change_scene("res://scenes/options.tscn")
+	$Options.play("press")
 
 
 func _on_exit_pressed():
-	get_tree().quit()
+	$exit2.play("press")
 
 
 func _on_credit_pressed():
+	$credit2.play("press")
+
+
+
+
+func _on_Options_frame_changed():
+	Global.change_scene("res://scenes/options.tscn")
+
+
+func _on_credit2_frame_changed():
 	Global.change_scene("res://scenes/credit.tscn","#05301a")
+
+
+func _on_exit2_frame_changed():
+	get_tree().quit()
