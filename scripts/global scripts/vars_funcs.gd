@@ -59,7 +59,7 @@ func apply_options():
 			OS.window_borderless = false
 	OS.window_size = resolutions[resolution]
 	OS.vsync_enabled = vsync
-	OS.center_window()
+	OS.window_position = (OS.get_screen_size()-OS.window_size)/2
 	match fps:
 		0:
 			Engine.target_fps = 0
