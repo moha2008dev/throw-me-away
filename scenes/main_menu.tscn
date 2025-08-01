@@ -1,78 +1,16 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=10 format=2]
-=======
-<<<<<<< HEAD
-[gd_scene load_steps=14 format=2]
-=======
-[gd_scene load_steps=10 format=2]
->>>>>>> 3c5de1899397c2691d9f40ac79891ee1a548a946
->>>>>>> Stashed changes
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://2d_art/new.png" type="Texture" id=2]
 [ext_resource path="res://2d_art/load.png" type="Texture" id=3]
 [ext_resource path="res://2d_art/exit.png" type="Texture" id=4]
-<<<<<<< Updated upstream
 [ext_resource path="res://2d_art/assettest/back.png" type="Texture" id=5]
 [ext_resource path="res://2d_art/credit.png" type="Texture" id=6]
 [ext_resource path="res://2d_art/options.png" type="Texture" id=7]
 [ext_resource path="res://2d_art/assettest/middle.png" type="Texture" id=8]
-=======
-<<<<<<< HEAD
-[ext_resource path="res://2d_art/exit pressed.png" type="Texture" id=5]
-[ext_resource path="res://2d_art/credit.png" type="Texture" id=6]
-[ext_resource path="res://2d_art/options.png" type="Texture" id=7]
-[ext_resource path="res://2d_art/options presed.png" type="Texture" id=8]
-[ext_resource path="res://2d_art/credit presed.png" type="Texture" id=9]
-=======
-[ext_resource path="res://2d_art/assettest/back.png" type="Texture" id=5]
-[ext_resource path="res://2d_art/credit.png" type="Texture" id=6]
-[ext_resource path="res://2d_art/options.png" type="Texture" id=7]
-[ext_resource path="res://2d_art/assettest/middle.png" type="Texture" id=8]
->>>>>>> 3c5de1899397c2691d9f40ac79891ee1a548a946
->>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0196078, 0.188235, 0.101961, 1 )
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "no press",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "press",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "no press",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "press",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "no press",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "press",
-"speed": 5.0
-} ]
 
 [node name="main_menu" type="Control"]
 margin_right = 160.0
@@ -118,12 +56,6 @@ margin_right = 41.4926
 margin_bottom = 103.626
 rect_scale = Vector2( 0.722988, 0.383216 )
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-[node name="exit2" type="AnimatedSprite" parent="."]
-=======
->>>>>>> Stashed changes
 [node name="Back" type="Sprite" parent="."]
 position = Vector2( 17.1589, 41.4666 )
 scale = Vector2( 0.32441, 0.346361 )
@@ -199,11 +131,9 @@ scale = Vector2( 0.32441, 0.346361 )
 texture = ExtResource( 8 )
 
 [node name="exit2" type="Sprite" parent="."]
->>>>>>> 3c5de1899397c2691d9f40ac79891ee1a548a946
 position = Vector2( 142, 70.395 )
 scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 2 )
-animation = "no press"
+texture = ExtResource( 4 )
 
 [node name="new2" type="Sprite" parent="."]
 position = Vector2( 142, 15.342 )
@@ -215,26 +145,18 @@ position = Vector2( 142, 34.295 )
 scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 3 )
 
-[node name="credit2" type="AnimatedSprite" parent="."]
+[node name="credit2" type="Sprite" parent="."]
 position = Vector2( 15, 71 )
 scale = Vector2( 0.05, 0.05 )
-frames = SubResource( 3 )
-animation = "no press"
+texture = ExtResource( 6 )
 
-[node name="Options" type="AnimatedSprite" parent="."]
+[node name="Options" type="Sprite" parent="."]
 position = Vector2( 142, 52.119 )
 scale = Vector2( 0.045, 0.05 )
-frames = SubResource( 4 )
-animation = "no press"
+texture = ExtResource( 7 )
 
 [connection signal="pressed" from="new" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="credit" to="." method="_on_credit_pressed"]
-[connection signal="animation_finished" from="exit2" to="." method="_on_exit2_animation_finished"]
-[connection signal="frame_changed" from="exit2" to="." method="_on_exit2_frame_changed"]
-[connection signal="animation_finished" from="credit2" to="." method="_on_credit2_animation_finished"]
-[connection signal="frame_changed" from="credit2" to="." method="_on_credit2_frame_changed"]
-[connection signal="animation_finished" from="Options" to="." method="_on_Options_animation_finished"]
-[connection signal="frame_changed" from="Options" to="." method="_on_Options_frame_changed"]
